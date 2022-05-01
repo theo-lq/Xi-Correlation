@@ -75,15 +75,3 @@ def xi_correlation(x, y, continuous=False):
     p_value = compute_p_value(continuous=continuous)
     
     return correlation, p_value
-
-
-## Note d'améliorations
-# Il faut reprendre le calcul des n, c'est pas clair et surtout simplifier les fonctions OK
-# Il faut revoir les fonctions initiales, les noms ne sont pas clair OK
-# Il faut vérifier que les modifs n'entraînent pas de régression OK
-
-# Il faut faire la jolie documentation qui va bien pour la fonction
-# Il faut l'exploiter pour donner des exemples et contre exemples
-# Partir sur une première animation manim ?
-# Développer le code pour la matrice de correlation
-# Appliquer le travail sur un dataset
