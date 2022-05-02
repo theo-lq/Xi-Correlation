@@ -2,6 +2,12 @@ from manim import *
 from scipy.stats import pearsonr
 from xi_correlation import *
 
+
+
+
+
+
+
 class Correlation(Scene):
     
     def sinus(self, size):
@@ -26,6 +32,12 @@ class Correlation(Scene):
         y = 5 * np.random.normal(size=size)
         return x, y
     
+    
+    def circle(self, size):
+        t = np.linspace(0, 2*np.pi, size)
+        x = np.cos(t) + 0.1 * np.random.normal(size=size)
+        y = np.sin(t) + 0.1 * np.random.normal(size=size)
+        return x, y
     
     
     def create_axis(self, x, y, alpha=0.1):
@@ -55,6 +67,8 @@ class Correlation(Scene):
         plot_2 = self.create_plot(self.squared, size=size)
         plot_3 = self.create_plot(self.inverse_squared, size=size)
         plot_4 = self.create_plot(self.blurred, size=size)
+        plot_5 = self.create_plot(self.circle, size=size)
+        
         self.add(plot_1)
         self.wait(3)
         self.play(Transform(plot_1, plot_2))
@@ -62,4 +76,6 @@ class Correlation(Scene):
         self.play(Transform(plot_1, plot_3))
         self.wait(3)
         self.play(Transform(plot_1, plot_4))
+        self.wait(3)
+        self.play(Transform(plot_1, plot_5))
         self.wait(3)
