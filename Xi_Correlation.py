@@ -5,6 +5,19 @@ from scipy.stats import rankdata, norm
 
 
 def xi_correlation(x, y, continuous=False):
+    """Compute the correlation coefficient between x and y according to the xi coefficient defined by Chatterjee.
+
+    Usage::
+        >>> size = 250
+        >>> x = np.linspace(start=-5, stop=5, num=size)
+        >>> y = x / 2 + np.sin(x) + 0.2 * np.random.normal(size)
+        >>> xi_correlation(
+
+    :param x: A list.
+    :param y: A list.
+    :rtype: A tuple of real.
+    """
+    
     
     
     def rank_order(vector):
