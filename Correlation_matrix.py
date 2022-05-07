@@ -14,8 +14,8 @@ def correlation_matrix(dataframe, correlation_function, **kwargs):
         >>> from Xi_correlation import xi_correlation
         >>> size = 250
         >>> x = np.linspace(start=-5, stop=5, num=size)
-        >>> y = x / 2 + np.sin(x) + 0.2 * np.random.normal(size)
-        >>> z = (x ** 2) / 5 + 0.2 * np.random.normal(size)
+        >>> y = x / 2 + np.sin(x) + 0.2 * np.random.normal(size=size)
+        >>> z = (x ** 2) / 5 + 0.2 * np.random.normal(size=size)
         >>> X = pd.DataFrame({'x': x, 'y': y, 'z': z})
         >>> matrix = correlation_matrix(X, xi_correlation)
 
@@ -35,7 +35,7 @@ def correlation_matrix(dataframe, correlation_function, **kwargs):
         y_index = 0
         for y_column in dataframe.columns:
             correlation, _ = correlation_function(dataframe[x_column], dataframe[y_column], **kwargs)
-            matrix[x_index, y_index] = correlation
+            matrix[y_index, x_index] = correlation
             
             y_index += 1
         
@@ -57,8 +57,8 @@ def show_correlation_matrix(dataframe, correlation_function, **kwargs):
         >>> from Xi_correlation import xi_correlation
         >>> size = 250
         >>> x = np.linspace(start=-5, stop=5, num=size)
-        >>> y = x / 2 + np.sin(x) + 0.2 * np.random.normal(size)
-        >>> z = (x ** 2) / 5 + 0.2 * np.random.normal(size)
+        >>> y = x / 2 + np.sin(x) + 0.2 * np.random.normal(size=size)
+        >>> z = (x ** 2) / 5 + 0.2 * np.random.normal(size=size)
         >>> X = pd.DataFrame({'x': x, 'y': y, 'z': z})
         >>> show_correlation_matrix(X, xi_correlation)
 
