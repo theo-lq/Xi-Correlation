@@ -69,5 +69,9 @@ def show_correlation_matrix(dataframe, correlation_function, **kwargs):
     
     
     matrix = correlation_matrix(dataframe, correlation_function, **kwargs)
-    sns.heatmap(matrix)
+    sns.heatmap(matrix, annot=True, fmt='f', linewidths=0.5, cmap='Reds')
     plt.show()
+
+
+
+show_correlation_matrix(X, xi_correlation)
